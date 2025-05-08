@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="nav-container">
+          <div class="brand" style="display:flex; justify-content:space-evenly;" >
+            <img src="projectimages/logo.png" height="70px" width="auto">
+            <a href="newhomepage.html"><button style="padding: 15PX;"> GO Back</button></a>
+          </div>
+          <nav>
+            <div class="nav-mobile">
+              <a href="#" id="nav-toggle">
+                <span></span>
+              </a>
+            </div>
+            <ul class="nav-list">
+              <li><a href="wnew.html">Home</a></li>
+              <li><a href="wabout.html">About</a></li>
+              <li><a href="#">My Projects</a>
+                <ul class="nav-dropdown">
+                  <li><a href="wcalcu.html">Calculator</a></li>
+                  <li><a href="wreg.html">Registration Form</a></li>
+                  <li><a href="wprojects.html">Without CSS Projects</a></li>
+                </ul>
+              </li>
+              
+              <li><a href="wcont.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <h1 style="text-align: center;"> Calculator</h1>
+   <article class="container" role="main">
+   <div class="calculator">
+       <div id="display" class="display">0</div>
+       <div class="buttons">
+         <button class="clear" onclick="clearDisplay()">C</button>
+         <button onclick="deleteLast()">⌫</button>
+         <button onclick="appendValue('%')">%</button>
+         <button class="operator" onclick="appendValue('/')">÷</button>
+   
+         <button onclick="appendValue('7')">7</button>
+         <button onclick="appendValue('8')">8</button>
+         <button onclick="appendValue('9')">9</button>
+         <button class="operator" onclick="appendValue('*')">×</button>
+   
+         <button onclick="appendValue('4')">4</button>
+         <button onclick="appendValue('5')">5</button>
+         <button onclick="appendValue('6')">6</button>
+         <button class="operator" onclick="appendValue('-')">−</button>
+   
+         <button onclick="appendValue('1')">1</button>
+         <button onclick="appendValue('2')">2</button>
+         <button onclick="appendValue('3')">3</button>
+         <button class="operator" onclick="appendValue('+')">+</button>
+   
+         <button onclick="appendValue('0')">0</button>
+         <button onclick="appendValue('.')">.</button>
+         <button class="equal" onclick="calculateResult()">=</button>
+       </div>
+     </div>
+   </article>
+   <h1 style="text-align: center;"> Registration Form</h1>
+    <div class="container">
+        <h2>Register</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm">Confirm Password</label>
+                <input type="password" id="confirm" name="confirm" required>
+            </div>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+  
+</body>
+</html>

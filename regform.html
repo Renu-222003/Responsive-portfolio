@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Registration Form</title>
+    <style>
+        div {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Segoe UI;
+        }
+
+        .nav-bar {
+            height: 70px;
+            background: #186e6f;
+        }
+
+        .brand {
+            float: left;
+            position: absolute;
+            padding-left: 20px;
+            line-height: 70px;
+            font-size: 1.5em;
+        }
+
+        .brand a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        nav {
+            float: right;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            float: left;
+            position: relative;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 0 20px;
+            line-height: 70px;
+            background: #186e6f;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* navbar css */
+
+
+
+        nav ul li a:hover {
+            background: #165e5f;
+            color: #fff;
+        }
+
+        nav ul li a:not(:only-child):after {
+            content: '▼';
+            padding-left: 5px;
+        }
+
+        nav ul li ul li {
+            min-width: 190px;
+        }
+
+        nav ul li ul li a {
+            padding: 15px;
+            line-height: 20px;
+        }
+
+        .nav-dropdown {
+            position: absolute;
+            display: none;
+            z-index: 1;
+        }
+
+        .nav-mobile {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 70px;
+            width: 70px;
+        }
+
+        #nav-toggle {
+            position: absolute;
+            left: 18px;
+            top: 22px;
+            cursor: pointer;
+            padding: 10px 35px 15px 0px;
+        }
+
+        #nav-toggle span,
+        #nav-toggle span::before,
+        #nav-toggle span::after {
+            position: absolute;
+            display: block;
+            content: '';
+            background: #fff;
+            height: 5px;
+            width: 35px;
+            transition: all 300ms ease-in-out;
+        }
+
+        #nav-toggle span::before {
+            top: -10px;
+        }
+
+        #nav-toggle span::after {
+            bottom: -10px;
+        }
+
+        #nav-toggle.active span {
+            background-color: transparent;
+        }
+
+        #nav-toggle.active span::before,
+        #nav-toggle.active span::after {
+            top: 0;
+        }
+
+        #nav-toggle.active span::before {
+            transform: rotate(45deg);
+        }
+
+        #nav-toggle.active span::after {
+            transform: rotate(-45deg);
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            .nav-mobile {
+                display: block;
+            }
+
+            nav {
+                width: 100%;
+                padding: 70px 0 15px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            nav ul li {
+                float: none;
+            }
+
+            nav ul li a {
+                padding: 15px;
+                line-height: 20px;
+                padding-left: 25%;
+            }
+
+
+            nav ul li ul li a {
+                padding-left: 30%;
+            }
+
+            .nav-dropdown {
+                position: static;
+            }
+        }
+
+        @media screen and (min-width: 799px) {
+            .nav-list {
+                display: block !important;
+            }
+        }
+
+
+        /* end navbar */
+        body {
+            background: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+
+            max-width: 360px;
+            margin: 50px auto;
+            padding: 10px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #f32544;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #f75d74;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        footer{
+  background-color: #186e6f;
+  color:white ;
+  padding:20px ;    
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="nav-bar">
+        <div class="nav-container">
+            <div class="brand">
+                <img src="projectimages/logo.png" height="70px" width="auto">
+            </div>
+            <nav>
+                <div class="nav-mobile">
+                    <a href="#" id="nav-toggle">
+                        <span></span>
+                    </a>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="newhomepage.html">Home</a></li>
+                    <li><a href="about1.html">About</a></li>
+                    <li><a href="#">My Projects</a>
+                        <ul class="nav-dropdown">
+                            <li><a href="calculator1.html">Calculator</a></li>
+                            <li><a href="regform.html">Registration Form</a></li>
+                            <li><a href="woprojects.html">Without CSS Projects</a></li>
+                        </ul>
+                    </li>
+                   
+                    <li><a href="contact123.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div> <br> <br>
+    <!-- end navbar -->
+    <h1 style="text-align: center;"> Registration Form</h1>
+    <div class="container">
+        <h2>Register</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm">Confirm Password</label>
+                <input type="password" id="confirm" name="confirm" required>
+            </div>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+    <footer>
+        <p style="text-align: center;">This is a footer area </p>
+      </footer>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent actual form submission
+            alert('Thank you for registering!');
+            // Optionally clear the form
+            this.reset();
+        });
+    </script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+<script>
+    $(document).ready(function () {
+        $('nav ul li a:not(:only-child)').click(function (e) {
+            $(this).siblings('.nav-dropdown').toggle();
+            e.stopPropagation();
+        });
+
+        $('html').click(function () {
+            $('.nav-dropdown').hide();
+        })
+        $('#nav-toggle').click(function () {
+            $('nav ul').slideToggle();
+        })
+        $('#nav-toggle').on('click', function () {
+            this.classList.toggle('active');
+        });
+    });
+</script>
+</body>
+
+</html>

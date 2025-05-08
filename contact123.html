@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>My Portfolio</title>
+ <style>
+    div {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Segoe UI;
+    }
+
+    .nav-bar {
+      height: 70px;
+      background: #186e6f;
+    }
+
+    .brand {
+      float: left;
+      position: absolute;
+      padding-left: 20px;
+      line-height: 70px;
+      font-size: 1.5em;
+    }
+
+    .brand a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    nav {
+      float: right;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      float: left;
+      position: relative;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 0 20px;
+      line-height: 70px;
+      background: #186e6f;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    /* navbar css */
+    nav ul li a:hover {
+      background: #165e5f;
+      color: #fff;
+    }
+
+    nav ul li a:not(:only-child):after {
+      content: '▼';
+      padding-left: 5px;
+    }
+
+    nav ul li ul li {
+      min-width: 190px;
+    }
+
+    nav ul li ul li a {
+      padding: 15px;
+      line-height: 20px;
+    }
+
+    .nav-dropdown {
+      position: absolute;
+      display: none;
+      z-index: 1;
+    }
+
+    .nav-mobile {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 70px;
+      width: 70px;
+    }
+
+    #nav-toggle {
+      position: absolute;
+      left: 18px;
+      top: 22px;
+      cursor: pointer;
+      padding: 10px 35px 15px 0px;
+    }
+
+    #nav-toggle span,
+    #nav-toggle span::before,
+    #nav-toggle span::after {
+      position: absolute;
+      display: block;
+      content: '';
+      background: #fff;
+      height: 5px;
+      width: 35px;
+      transition: all 300ms ease-in-out;
+    }
+
+    #nav-toggle span::before {
+      top: -10px;
+    }
+
+    #nav-toggle span::after {
+      bottom: -10px;
+    }
+
+    #nav-toggle.active span {
+      background-color: transparent;
+    }
+
+    #nav-toggle.active span::before,
+    #nav-toggle.active span::after {
+      top: 0;
+    }
+
+    #nav-toggle.active span::before {
+      transform: rotate(45deg);
+    }
+
+    #nav-toggle.active span::after {
+      transform: rotate(-45deg);
+    }
+
+    @media only screen and (max-width: 768px) {
+
+      .nav-mobile {
+        display: block;
+      }
+
+      nav {
+        width: 100%;
+        padding: 70px 0 15px;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      nav ul li {
+        float: none;
+      }
+
+      nav ul li a {
+        padding: 15px;
+        line-height: 20px;
+        padding-left: 25%;
+      }
+
+
+      nav ul li ul li a {
+        padding-left: 30%;
+      }
+
+      .nav-dropdown {
+        position: static;
+      }
+    }
+
+    @media screen and (min-width: 799px) {
+      .nav-list {
+        display: block !important;
+      }
+    }
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+
+section {
+  padding: 50px;
+  margin: 20px auto;
+  max-width: 1200px;
+  background-color: #fff;
+  border-radius: 8px;
+ 
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-info h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.contact-form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+ .map iframe {
+  border: 0;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    flex-direction: column;
+  }
+} 
+
+
+
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+</style>
+<body>
+    <div class="nav-bar">
+      <div class="nav-container">
+        <div class="brand">
+          <img src="projectimages/logo.png" height="70px" width="auto">
+        </div>
+        <nav>
+          <div class="nav-mobile">
+            <a href="#" id="nav-toggle">
+              <span></span>
+            </a>
+          </div>
+          <ul class="nav-list">
+            <li><a href="newhomepage.html">Home</a></li>
+            <li><a href="about1.html">About</a></li>
+            <li><a href="#">My Projects</a>
+              <ul class="nav-dropdown">
+                <li><a href="calculator1.html">Calculator</a></li>
+                <li><a href="regform.html">Registration Form</a></li>
+                <li><a href="woprojects.html">Without CSS Projects</a></li>
+              </ul>
+            </li>
+            
+            <li><a href="contactmain.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    
+    <section class="contact">
+      <div class="contact-info">
+        <h1>Get in Touch</h1>
+        <p>I’m excited to connect with you! Whether you want to discuss a potential project, collaboration, or just say hello, feel free to reach out. I’m always happy to hear from like-minded professionals, clients, or recruiters.</p>
+        
+        <p>Email: info@company.com</p>
+        <p>Phone: +123 456 7890</p>
+      </div>
+      <div class="contact-form">
+        <form action="#" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" required> </textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      
+      </div>
+    </section>
+   <section>
+    <h1 style="text-align: center;"> Click On the Image To View My Portfolio in Without CSS Form </h1> <br>
+   
+    <a href="wnew.html"><img src="projectimages/get.jpg" alt="Nature" class="responsive" width="600" height="400"></a>
+   </section>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+      <script src="script.js"></script>
+    </body>
+    <script>
+      $(document).ready(function () {
+        $('nav ul li a:not(:only-child)').click(function (e) {
+          $(this).siblings('.nav-dropdown').toggle();
+          e.stopPropagation();
+        });
+    
+        $('html').click(function () {
+          $('.nav-dropdown').hide();
+        })
+        $('#nav-toggle').click(function () {
+          $('nav ul').slideToggle();
+        })
+        $('#nav-toggle').on('click', function () {
+          this.classList.toggle('active');
+        });
+      });
+    </script>
+    </body>
+    </html>
